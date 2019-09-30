@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title> Index </title>
+    <style>
+        body {
+          background-color: white;
+          margin: 0px;
+          padding: 30px;
+          display : flex;
+        }
+
+        .image{
+            height: 200px;
+            width : 200px;
+
+          }
+
+          #result {
+            font-size: 30px;
+          }
+
+          .centrer{
+            diplay : flex;
+            justify-content :space-between;
+            align-content : center;
+          }
+
+          #carre{
+            height: 100px;
+            width : 100px;
+          }
+
+    </style>
+  </head>
+  <body class="centrer">
+      <img  id="test" src="https://www.sante-sur-le-net.com/wp-content/uploads/2016/08/toxoplasmose-chat-danger.jpg" alt="chat" title="chat" class="image" />
+
+    <button type="button" name="button" id="carre" onclick="compteurCar();"></button>
+<br/>
+<div>
+<div id="chat">Nombre de passage sur le chat : </div>
+<br/>
+<div id="car">Nombre de cliques sur le carré : </div>
+</div>
+<script>
+  var car =0;
+  var chat =0;
+function compteurCar(){
+  car ++;
+  showResultcar(car);;
+}
+function compteurChat(){
+  chat++;
+  showResultchat(chat);
+  }
+
+function showResultchat(chat)
+{
+  var resultElem = document.getElementById("chat");
+  resultElem.textContent = "Nombre de passage sur le chat : "+chat.toString();
+}
+
+function showResultcar(car)
+{
+  var resultElem = document.getElementById("car");
+  resultElem.textContent = "Nombre de cliques sur le carré : "+car.toString();
+}
+
+test.addEventListener("mouseover", function(){
+  compteurChat();
+});
+
+</script>
+
+  </body>
+</html>
