@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<style>
+  #result {
+    font-size: 30px;
+  }
+</style>
+
+</head>
+<body>
+<input type="number"/>
+<button onclick="calcul();">calcul de la factorielle</button>
+
+<div id="result"><br/></div>
+
+<script>
+
+function factorielle(n){
+	var res = 1;
+	for (var i=1 ; i<=n ;i++){
+  	res = res*i;
+  }
+	return (res);
+}
+
+function calcul() {
+	var numElem = document.querySelector("input[type='number']");
+  var result = factorielle(numElem.value);
+	showResult(result);
+}
+
+function showResult(result)
+{
+  var resultElem = document.getElementById("result");
+  resultElem.textContent = result.toString();
+}
+
+</script>
+</body>
+</html>
